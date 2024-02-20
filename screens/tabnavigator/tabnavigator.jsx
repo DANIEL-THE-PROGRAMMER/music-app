@@ -7,6 +7,10 @@ import Home from "../home";
 import Rewards from "../rewards";
 import Search from "../search";
 import Favourites from "../favourites";
+import Music from "../music";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+
 
 const HomeTabIcon = () => <HomeIcon />;
 const RewardsTabIcon = () => <RewardsIcon />;
@@ -14,6 +18,20 @@ const SearchTabIcon = () => <SearchIcon />;
 const FavouritesTabIcon = () => <FavouritesIcon />;
 
 const Tab = createBottomTabNavigator();
+
+const HomeStack = createNativeStackNavigator();
+
+function HomeStackScreen() {
+  return (
+    <HomeStack.Navigator
+      screenOptions={{
+        headerShown: false
+      }}>
+      <HomeStack.Screen name="Home" component={Home} />
+      <HomeStack.Screen name="Details" component={Music} />
+    </HomeStack.Navigator>
+  );
+}
 
 export const BottomTabNavigator = () => {
   return (
@@ -43,8 +61,9 @@ export const BottomTabNavigator = () => {
         activeTintColor: "tomato",
         inactiveTintColor: "gray",
       }}
+      initialRouteName="Rewards"
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={HomeStackScreen} />
       <Tab.Screen name="Rewards" component={Rewards} />
       <Tab.Screen name="Search" component={Search} />
       <Tab.Screen name="Favourites" component={Favourites} />

@@ -1,10 +1,13 @@
 
+
+
+
 import { View, StyleSheet, Text } from "react-native"
 import { LikeIcon } from "../../../components/icon"
 
-export const MusicCard = ({ image, title, liked, option, name }) => {
+export const MusicCardHorizontal = ({key, image, title, liked, option, name }) => {
     return (
-        <View style={styles.container}>
+        <View style={styles.container} key={key}>
             <View style={styles.imageBox}></View>
             <View style={styles.contentbox}>
                 <View style={styles.innercontentbox}>
@@ -13,7 +16,7 @@ export const MusicCard = ({ image, title, liked, option, name }) => {
                 </View>
                 <View style={styles.innercontentbox}>
                     <Text style={styles.name}>Charles Boe</Text>
-                    <Text style={styles.option}>{option}</Text>
+                    <Text style={styles.option}></Text>
                 </View>
             </View>
         </View>
@@ -22,19 +25,25 @@ export const MusicCard = ({ image, title, liked, option, name }) => {
 
 const styles = StyleSheet.create({
     container: {
-        borderBottomRightRadius: 16,
-        borderBottomLeftRadius: 16,
-        marginTop:12,
+        borderRadius:16,
         backgroundColor: "#FDEBE4",
-        flex: 1
+        flex: 1,
+        flexDirection:"row",
+        padding:10,
+        gap:15
     },
     imageBox: {
-        height: 107,
+        height: 70,
+        width:83,
+        backgroundColor:"#fafa",
+        borderRadius:5
     },
     contentbox: {
         paddingTop:4,
         paddingBottom:8,
-        paddingHorizontal:8
+        paddingHorizontal:8,
+        flexGrow:1,
+        justifyContent:"space-between"
     },
     innercontentbox:{
         flexDirection:"row",
