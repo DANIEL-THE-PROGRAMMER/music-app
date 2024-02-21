@@ -28,9 +28,9 @@ export default function Music() {
   useEffect(() => {
     if (open && aucMode === false) {
       setAucMode(true);
-    } 
+    }
 
-    if(open && aucMode === true){
+    if (open && aucMode === true) {
       setAucMode(false);
     }
   }, [open]);
@@ -43,7 +43,13 @@ export default function Music() {
       >
         <View style={styles.container}>
           <CustomModal open={open} onClose={toggleModal} />
-          <View style={[styles.music_image, !aucMode && { height: 353 }, aucMode && { flex: 1 }]}></View>
+          <View
+            style={[
+              styles.music_image,
+              !aucMode && { height: 353 },
+              aucMode && { flex: 1 },
+            ]}
+          ></View>
           <View style={styles.durationcontainer}>
             <Text style={styles.minute}>00:59</Text>
             <View style={styles.duration}></View>
@@ -88,7 +94,11 @@ export default function Music() {
               <Image source={lyrics} style={styles.image} />
             </View>
           </View>
-          {aucMode ? "" :  <MusicSection title="New Podcasts" option="Podcast" />}
+          {aucMode ? (
+            ""
+          ) : (
+            <MusicSection title="New Podcasts" option="Podcast" />
+          )}
         </View>
       </ScrollView>
     </SafeAreaView>
