@@ -73,12 +73,9 @@ export default function Rewards() {
             Most played songs
           </Text>
           <View style={styles.playedsongsbox}>
-            { Array.from({ length: 7 }, (_, index) => {
-                return (
-                    <MusicCardHorizontal key={index} />
-                )
-            }) }
-            
+            {Array.from({ length: 7 }, (_, index) => {
+              return <MusicCardHorizontal key={index} />;
+            })}
           </View>
         </View>
       </ScrollView>
@@ -90,11 +87,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    paddingVertical:20
+    paddingVertical: 20,
   },
-  playedsongsbox:{
+  playedsongsbox: {
     gap: 20,
-    marginTop:30
+    marginTop: 30,
   },
   scrollView: {
     flex: 1,

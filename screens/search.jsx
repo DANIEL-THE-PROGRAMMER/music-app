@@ -28,7 +28,7 @@ export default function Search() {
             <View
               style={{
                 marginHorizontal: 10,
-                flex: 1
+                flex: 1,
               }}
             >
               <View style={styles.playedsongsbox}>

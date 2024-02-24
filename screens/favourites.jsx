@@ -64,15 +64,15 @@ export default function Favourites() {
                 ))}
               </View>
             ) : (
-             <View style={{
-                gap:20
-             }}>
-                {
-                     Array.from({ length: 6 }, (_, index) => (
-                        <MusicCardHorizontal key={index} index={index} />
-                      ))
-                }
-             </View>
+              <View
+                style={{
+                  gap: 20,
+                }}
+              >
+                {Array.from({ length: 6 }, (_, index) => (
+                  <MusicCardHorizontal key={index} index={index} />
+                ))}
+              </View>
             )}
           </View>
         </View>
